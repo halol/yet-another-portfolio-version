@@ -1,0 +1,293 @@
+// bower:scss
+// endbower
+
+// Fonts
+$scale: 9px;
+$font-size: $scale * 2;
+
+// Colours
+$default: #ccc;
+$type: #212529;
+$lightgray: #F7F7F7;
+$primary: #0E3FF2;
+
+// Objects
+$border-radius: 14px 14px 14px 14px / 15px 15px 15px 15px;
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  outline: 1px solid red;
+}
+body {
+  background: #fafafa;
+  font: $scale*2 'Muli', BlinkMacSystemFont, -apple-system, “Segoe UI”, Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.45;
+  color: $type;
+  width: 100%;
+}
+
+p {margin-bottom: 1.3em;}
+
+h1, h2, h3, h4 {
+  margin: 1.414em 0 0.5em;
+  // font-weight: 300;
+  line-height: 1.2;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 3.998em;
+}
+h1.lead {
+  /* — design thinker, ar: */
+  font-weight: 300;
+  font-size: 36px;
+  color: $type;
+  letter-spacing: -0.3px;
+  max-width: 50rem;
+  a {
+    color: $type;
+  }
+  @media (max-width: 414px) {
+    max-width: 100%;
+  }
+}
+
+h2 {/* Disc Museum: */
+  font-size: 28px;
+  color: $type;
+  letter-spacing: -0.23px;
+  margin: 0;
+}
+
+h3 {font-size: 1.999em;}
+
+h4 {font-size: 1.414em;}
+
+small, .font_small {font-size: 0.707em;}
+
+.browserupgrade {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: $type;
+  padding: 0.2em 0;
+}
+a,
+button,
+input {
+  transition: all 0.3s ease;
+  font-weight: 900;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  > li {
+    &:not(:first-child) {
+      margin-top: $scale;
+    }
+  }
+  &.list-inline {
+    > li {
+      display: inline-block;
+      &:not(:last-child) {
+        margin-right: $scale;
+      }
+    }
+  }
+}
+
+a {
+  color: $primary;
+  text-decoration: none;
+  font-weight: normal;
+  &:hover {
+    color: darken($primary, 10%);
+  }
+}
+
+button {
+  border-radius: $border-radius;
+  background: $default;
+  border: 0;
+  padding: $scale $scale * 2;
+  outline: none;
+  &:hover {
+    background: darken($default, 10%);
+    cursor: pointer;
+  }
+}
+
+input {
+  padding: $scale $scale*2;
+  border-radius: $border-radius;
+  border: 1px solid $default;
+  &:focus {
+    border-color: $primary;
+    box-shadow: 0 0 $scale rgba($primary, 0.25);
+    outline: none;
+  }
+}
+
+
+header,
+section,
+footer {
+  padding: 10vh;
+  @media (max-width: 1024px) {
+    padding: 7vh;
+  }
+}
+
+.flex {
+  display: flex;
+  @media (max-width: 414px) {
+    flex-direction: column;
+    flex-flow: column-reverse;
+  }
+}
+.project {
+  overflow: hidden;
+  &:nth-child(even) {
+    background: $lightgray;
+  }
+  @media (max-width: 414px) {
+    
+  }
+}
+
+.description {
+  //outline: 1px solid red;
+  width: 40%;
+  @extend .flex;
+  flex-direction: column;
+  padding-top: 3em;
+  @media (max-width: 414px) {
+    width: 100%;
+  }
+}
+.mockup {
+  
+  position: relative;
+  width: 60%;
+  text-align: right;
+  right: -100px;
+  > a {
+    display: inline-block;
+    img {
+      max-height: 60vw;
+      //filter: drop-shadow(0 $scale $scale*2 rgba($type, 0.2));
+      @media (max-width: 414px) {
+        width: 100%;
+        max-height: 100vw;
+        height: auto;
+      }
+    }
+  }
+  @media (max-width: 414px) {
+    right: 0px;
+    width: 100%;
+  }
+}
+.project-description {
+  //max-width: 40vw;
+  @media (max-width: 414px) {
+    //max-width: 100%;
+  }
+}
+
+.what {
+  .description {
+    //width: 70vw;
+    text-align: center;
+    padding-top: 0;
+    margin: 0 auto;
+    img {
+      text-align: center;
+      width: 48px;
+      
+      margin: 0 auto;
+      margin-bottom: $scale*2;
+    }
+    .project-description {
+      //max-width: 100%;
+    }
+    &:nth-child(even) {
+      text-align: right;
+    }
+  }
+  .about {
+    //width: 50%;
+  }
+}
+
+.process {
+  background: $type;
+  color: $lightgray;
+  h2 {
+    color: $lightgray;
+  }
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-left: $scale * 2 * -1;
+  margin-right: $scale * 2 * -1;
+  &.three-cards {
+    > .card {
+      width: calc((100%/3) - (9px * 12));
+      @media (max-width: 1024px) {
+        width: 100%;
+      }
+    }
+  }
+  &.two-cards {
+    > .card {
+      width: calc((100%/2) - (9px * 12));
+      @media (max-width: 1024px) {
+        width: 100%;
+      }
+    }
+  }
+  .card {
+    position: relative;
+    margin: $scale * 2;
+    $padding: $scale * 4;
+    
+    //outline: 1px solid red;
+    padding: $padding;
+    background: lighten($type, 6%);
+    border-radius: $border-radius;
+    transition: all 0.3s ease;
+    &:nth-child(1),
+    &:nth-child(2),
+    &:nth-child(3) {
+      // width: calc((100% / 3) - (9px * 6) - 10vh);
+
+    }
+    &:nth-child(4),
+    &:nth-child(5) {
+      // width: calc(50% - (9px * 6) - 10vh);
+    }
+    &:hover {
+      background: $primary;
+      transform: scale(1.05);
+    }
+    h3 {
+      margin: 0;
+      margin-bottom: $scale * 2;
+    }
+  }
+}
+
+footer {
+  h1.lead {
+    @media (max-width: 414px) {
+      font-size: 22px;
+    }
+  }
+}
