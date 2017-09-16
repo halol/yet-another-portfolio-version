@@ -56,6 +56,7 @@
         <strong>Grzegorz Hadała</strong>
         &mdash; design thinker, artistic soul and the problem solver with a pragmatic and holistic approach.
       </h1>
+      
     </header>
     <section class="project project-right">
       <div class="flex">
@@ -195,11 +196,11 @@
       </article>
     </section>
     <section class="about">
-      <p class="about-me"><strong>Product Designer</strong> with 3 years of practice with building beautiful mobile and web products with great experiences and 7 years as a multidisciplinary digital designer in print, marketing and advertising.</p>
-      <p class="about-me">Worked with different types of target markets and delivered more than 30 mobile apps and websites in the corporate, start-up and a freelance environment.</p>
-      <div class="brands">
-        <p><strong>I was working with big brands</strong></p>
-        <ul class="list-inline">
+      <p class="about-me slide-from-bottom"><strong>Product Designer</strong> with 3 years of practice with building beautiful mobile and web products with great experiences and 7 years as a multidisciplinary digital designer in print, marketing and advertising.</p>
+      <p class="about-me slide-from-bottom">Worked with different types of target markets and delivered more than 30 mobile apps and websites in the corporate, start-up and a freelance environment.</p>
+      <div class="brands ">
+        <p class="slide-from-bottom"><strong>I was working with big brands</strong></p>
+        <ul class="list-inline slide-from-bottom">
           <li>Cisco</li>
           <li>Asus</li>
           <li>PepsiCo</li>
@@ -207,8 +208,8 @@
           <li>Allegro</li>
           <li>PayU</li>
         </ul>
-        <p><strong>and some startups</strong></p>
-        <ul class="list-inline">
+        <p class="slide-from-bottom"><strong>and some startups</strong></p>
+        <ul class="list-inline slide-from-bottom">
           <li><a href="https://kidsknowbest.co.uk/">Kids Know Best</a></li>
           <li><a href="http://latetrip.com/">Latetrip.com</a></li>
           <li><a href="https://www.measurematch.com/">MeasureMatch</a></li>
@@ -218,15 +219,15 @@
       </div>
     </section>
     <footer>
-      <h2>Get in touch</h2>
+      <h2 class="slide-from-bottom">Get in touch</h2>
       <br>
       <h1 class="lead">
         <ul>
-          <li><a href="mailto:grzegorz.hadala@gmail.com">grzegorz.hadala@gmail.com</a></li>
-          <li><a href="tel:4407561048644">+44 (0) 756 1048 644</a></li>
+          <li class="slide-from-bottom"><a href="mailto:grzegorz.hadala@gmail.com">grzegorz.hadala@gmail.com</a></li>
+          <li class="slide-from-bottom"><a href="tel:4407561048644">+44 (0) 756 1048 644</a></li>
         </ul>
       </h1>
-      <ul class="list-inline">
+      <ul class="list-inline slide-from-bottom">
         <li><a href="https://www.linkedin.com/in/grzegorzhadala/">LinkedIn</a></li>
         <li><a href="https://twitter.com/GregHadala">Twitter</a></li>
         <li><a href="https://www.behance.net/greghadala">Behance</a></li>
@@ -280,6 +281,11 @@
           origin: 'left'
         });
         sr.reveal('.card', {
+          origin: 'bottom',
+          distance: 0,
+          scale: 0.97
+        }, 300);
+        sr.reveal('.about-item', {
           origin: 'bottom',
           distance: 0,
           scale: 0.97
