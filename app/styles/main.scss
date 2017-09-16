@@ -161,7 +161,10 @@ footer {
 header {
   padding: 20vh 10vh 10vh 10vh;
   @media (max-width: 1024px) {
-    padding: 30vh 4vh 4vh 4vh;
+    padding: 64px 48px;
+  }
+  @media (max-width: 414px) {
+    padding: 64px 27px;
   }
 }
 
@@ -181,8 +184,17 @@ header {
 }
 .project {
   overflow: hidden;
-  &:nth-child(even) {
+  background: none;
+  &:nth-of-type(even) {
     background: $lightgray;
+  }
+  @media (max-width: 1024px) {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+  @media (max-width: 414px) {
+    padding-top: 64px;
+    padding-bottom: 64px;
   }
   
 }
@@ -211,7 +223,7 @@ header {
     img {
       max-height: 60vw;
       @media (max-width: 720px) {
-        width: 100%;
+        width: 100vw;
         max-height: 100vw;
         height: auto;
       }
