@@ -10,6 +10,7 @@ $default: #ccc;
 $type: #212529;
 $lightgray: #F7F7F7;
 $primary: #0E3FF2;
+$secondary: #0EC2F2;
 
 // Objects
 $border-radius: 14px 14px 14px 14px / 15px 15px 15px 15px;
@@ -17,10 +18,10 @@ $border-radius: 14px 14px 14px 14px / 15px 15px 15px 15px;
 * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  outline: 1px solid red;
+  //outline: 1px solid red;
 }
 body {
-  background: #fafafa;
+  background: #fff;
   font: $scale*2 'Muli', BlinkMacSystemFont, -apple-system, “Segoe UI”, Roboto, Helvetica, Arial, sans-serif;
   line-height: 1.45;
   color: $type;
@@ -49,8 +50,9 @@ h1.lead {
   a {
     color: $type;
   }
-  @media (max-width: 414px) {
+  @media (max-width: 720px) {
     max-width: 100%;
+    font-size: 24px;
   }
 }
 
@@ -68,10 +70,15 @@ h4 {font-size: 1.414em;}
 small, .font_small {font-size: 0.707em;}
 
 .browserupgrade {
-  margin: 0.2em 0;
-  background: #ccc;
-  color: $type;
-  padding: 0.2em 0;
+  position: fixed;
+  border-radius: $border-radius;
+  background: $lightgray;
+  // color: white;
+  padding: $scale $scale * 2;
+  top: $scale * 2;
+  left: $scale * 2;
+  margin: $scale;
+  z-index: 100;
 }
 a,
 button,
@@ -84,27 +91,34 @@ ul {
   list-style: none;
   margin: 0;
   padding: 0;
-  > li {
-    &:not(:first-child) {
-      margin-top: $scale;
-    }
-  }
   &.list-inline {
+    margin-bottom: $scale * 2;
     > li {
       display: inline-block;
       &:not(:last-child) {
-        margin-right: $scale;
+        margin-right: $scale * 3;
+      }
+      @media (max-width: 720px) {
+        display: block;
+        padding: 9px 0;
+        > a {
+          width: 100%;
+          // padding: 9px;
+          
+        }
       }
     }
   }
 }
 
-a {
+a,
+.btn-inline {
   color: $primary;
   text-decoration: none;
   font-weight: normal;
+  background: none;
   &:hover {
-    color: darken($primary, 10%);
+    color: darken($primary, 20%);
   }
 }
 
@@ -137,15 +151,32 @@ section,
 footer {
   padding: 10vh;
   @media (max-width: 1024px) {
-    padding: 7vh;
+    padding: 48px;
+  }
+  @media (max-width: 414px) {
+    padding: 27px;
+  }
+}
+
+header {
+  padding: 20vh 10vh 10vh 10vh;
+  @media (max-width: 1024px) {
+    padding: 30vh 4vh 4vh 4vh;
   }
 }
 
 .flex {
   display: flex;
-  @media (max-width: 414px) {
+  @media (max-width: 720px) {
     flex-direction: column;
     flex-flow: column-reverse;
+  }
+  &.web {
+    flex-direction: column;
+    @media (max-width: 720px) {
+      flex-direction: column;
+      flex-flow: column-reverse;
+    }
   }
 }
 .project {
@@ -153,62 +184,59 @@ footer {
   &:nth-child(even) {
     background: $lightgray;
   }
-  @media (max-width: 414px) {
-    
-  }
+  
 }
 
 .description {
-  //outline: 1px solid red;
-  width: 40%;
+  width: 45vw;
   @extend .flex;
   flex-direction: column;
   padding-top: 3em;
-  @media (max-width: 414px) {
+  @media (max-width: 720px) {
     width: 100%;
   }
 }
 .mockup {
-  
   position: relative;
-  width: 60%;
+  width: 55vw;
   text-align: right;
   right: -100px;
   > a {
     display: inline-block;
+    padding: 0;
+    background: none;
+    &:hover {
+      background: none;
+    }
     img {
       max-height: 60vw;
-      //filter: drop-shadow(0 $scale $scale*2 rgba($type, 0.2));
-      @media (max-width: 414px) {
+      @media (max-width: 720px) {
         width: 100%;
         max-height: 100vw;
         height: auto;
       }
     }
   }
-  @media (max-width: 414px) {
+  @media (max-width: 720px) {
     right: 0px;
     width: 100%;
   }
 }
 .project-description {
-  //max-width: 40vw;
-  @media (max-width: 414px) {
-    //max-width: 100%;
+  @media (max-width: 720px) {
   }
 }
 
 .what {
   .description {
-    //width: 70vw;
-    text-align: center;
+    text-align: left;
     padding-top: 0;
-    margin: 0 auto;
+    // xmargin: 0 auto;
     img {
-      text-align: center;
+      // text-align: center;
       width: 48px;
       
-      margin: 0 auto;
+      margin: 0;
       margin-bottom: $scale*2;
     }
     .project-description {
@@ -217,9 +245,6 @@ footer {
     &:nth-child(even) {
       text-align: right;
     }
-  }
-  .about {
-    //width: 50%;
   }
 }
 
@@ -257,25 +282,13 @@ footer {
     position: relative;
     margin: $scale * 2;
     $padding: $scale * 4;
-    
-    //outline: 1px solid red;
     padding: $padding;
     background: lighten($type, 6%);
     border-radius: $border-radius;
     transition: all 0.3s ease;
-    &:nth-child(1),
-    &:nth-child(2),
-    &:nth-child(3) {
-      // width: calc((100% / 3) - (9px * 6) - 10vh);
-
-    }
-    &:nth-child(4),
-    &:nth-child(5) {
-      // width: calc(50% - (9px * 6) - 10vh);
-    }
     &:hover {
       background: $primary;
-      transform: scale(1.05);
+      transform: scale(1.01);
     }
     h3 {
       margin: 0;
@@ -285,9 +298,40 @@ footer {
 }
 
 footer {
+  background: $lightgray;
   h1.lead {
-    @media (max-width: 414px) {
+    @media (max-width: 720px) {
       font-size: 22px;
     }
   }
+}
+
+.brands {
+  // background: $lightgray;
+  span {
+    color:lighten($primary, 20%);
+    margin-left: $scale;
+    font-size: 12px;
+  }
+  img {
+    width: 64px;
+    vertical-align: middle;
+    margin-right: 9px;
+  }
+}
+.about-me {
+  max-width: 50%;
+  @media (max-width: 720px) {
+    max-width: 100%;
+  }
+}
+
+.js-toggle {
+  width: auto;
+  display: inline;
+}
+
+
+.about {
+  background: white;
 }
