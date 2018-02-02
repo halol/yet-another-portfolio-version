@@ -41,11 +41,27 @@
     <!-- build:css styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
-    
+
     <!-- build:js scripts/vendor/modernizr.js -->
     <script src="/bower_components/modernizr/modernizr.js"></script>
     <!-- endbuild -->
     <link href="https://fonts.googleapis.com/css?family=Muli:300,400,400i,700,900" rel="stylesheet">
+    <script>
+      window['_fs_debug'] = false;
+      window['_fs_host'] = 'fullstory.com';
+      window['_fs_org'] = 'A8X1R';
+      window['_fs_namespace'] = 'FS';
+      (function(m,n,e,t,l,o,g,y){
+          if (e in m) {if(m.console && m.console.log) { m.console.log('FullStory namespace conflict. Please set window["_fs_namespace"].');} return;}
+          g=m[e]=function(a,b){g.q?g.q.push([a,b]):g._api(a,b);};g.q=[];
+          o=n.createElement(t);o.async=1;o.src='https://'+_fs_host+'/s/fs.js';
+          y=n.getElementsByTagName(t)[0];y.parentNode.insertBefore(o,y);
+          g.identify=function(i,v){g(l,{uid:i});if(v)g(l,v)};g.setUserVars=function(v){g(l,v)};
+          y="rec";g.shutdown=function(i,v){g(y,!1)};g.restart=function(i,v){g(y,!0)};
+          g.identifyAccount=function(i,v){o='account';v=v||{};v.acctId=i;g(o,v)};
+          g.clearUserCookie=function(){};
+      })(window,document,window['_fs_namespace'],'script','user');
+      </script>
   </head>
   <body>
     <!--[if lt IE 10]>
@@ -56,7 +72,7 @@
         <strong>Grzegorz Hadała</strong>
         &mdash; design thinker, artistic soul and the problem solver with a pragmatic and holistic approach.
       </h1>
-      
+
     </header>
     <section class="project project-right">
       <div class="flex">
@@ -235,7 +251,7 @@
         <li><a href="https://github.com/halol">Github</a></li>
       </ul>
     </footer>
-    
+
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
       (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
@@ -252,7 +268,7 @@
     <script src="/bower_components/scrollreveal/dist/scrollreveal.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
-    
+
     <!-- build:js scripts/main.js -->
     <script src="scripts/main.js"></script>
     <!-- endbuild -->
@@ -269,14 +285,14 @@
           reset: false,
           viewFactor: 0.3
         });
-        sr.reveal('.slide-from-bottom', { 
+        sr.reveal('.slide-from-bottom', {
           origin: 'bottom'
         });
-  
+
         sr.reveal('.slide-from-right', {
           origin: 'right'
         });
-  
+
         sr.reveal('.slide-from-left', {
           origin: 'left'
         });
