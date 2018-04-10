@@ -22,7 +22,7 @@ $border-radius: 14px 14px 14px 14px / 15px 15px 15px 15px;
 }
 body {
   background: #fff;
-  font: $scale*2 'Muli', BlinkMacSystemFont, -apple-system, “Segoe UI”, Roboto, Helvetica, Arial, sans-serif;
+  font: $scale*2 'IBM Plex Mono', BlinkMacSystemFont, -apple-system, “Segoe UI”, Roboto, Helvetica, Arial, sans-serif;
   line-height: 1.45;
   color: $type;
   width: 100%;
@@ -44,7 +44,8 @@ h1.lead {
   /* — design thinker, ar: */
   font-weight: 300;
   font-size: 36px;
-  color: $type;
+  //color: $type;
+  color: white;
   letter-spacing: -0.3px;
   max-width: 50rem;
   a {
@@ -104,7 +105,7 @@ ul {
         > a {
           width: 100%;
           // padding: 9px;
-          
+
         }
       }
     }
@@ -159,6 +160,8 @@ footer {
 }
 
 header {
+  background: $primary;
+  color: white;
   padding: 20vh 10vh 10vh 10vh;
   @media (max-width: 1024px) {
     padding: 64px 48px;
@@ -196,7 +199,7 @@ header {
     padding-top: 64px;
     padding-bottom: 64px;
   }
-  
+
 }
 
 .description {
@@ -247,7 +250,7 @@ header {
     img {
       // text-align: center;
       width: 48px;
-      
+
       margin: 0;
       margin-bottom: $scale*2;
     }
@@ -346,4 +349,10 @@ footer {
 
 .about {
   background: white;
+}
+
+.disabled {
+  &:hover {
+    cursor: default;
+  }
 }
