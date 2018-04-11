@@ -312,6 +312,18 @@
       e.src='https://www.google-analytics.com/analytics.js';
       r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
       ga('create','UA-6874650-30');ga('send','pageview');
+
+      // Google Event Tracking
+      var anal = document.querySelectorAll('.anal');
+      anal.forEach( function( btn ) {
+         btn.addEventListener('click', function(event) {
+            ga('send', 'event', {
+               eventAction: 'click',
+               eventCategory: 'Checking links',
+               eventLabel: event.target.attributes.title.value // buy-now-above || buy-now-below
+            });
+         });
+      } );
     </script>
 
     <!-- build:js scripts/vendor.js -->
