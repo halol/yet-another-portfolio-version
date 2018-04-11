@@ -11,9 +11,11 @@ $type: #212529;
 $lightgray: #F7F7F7;
 $primary: #0E3FF2;
 $secondary: #0EC2F2;
+$rose: #FF7676;
 
 // Objects
 $border-radius: 14px 14px 14px 14px / 15px 15px 15px 15px;
+$font: 'IBM Plex Mono', BlinkMacSystemFont, -apple-system, “Segoe UI”, Roboto, Helvetica, Arial, sans-serif;
 
 * {
   -webkit-font-smoothing: antialiased;
@@ -22,7 +24,8 @@ $border-radius: 14px 14px 14px 14px / 15px 15px 15px 15px;
 }
 body {
   background: #fff;
-  font: $scale*2 'IBM Plex Mono', BlinkMacSystemFont, -apple-system, “Segoe UI”, Roboto, Helvetica, Arial, sans-serif;
+  font-family: $font;
+  font-size: $font-size;
   line-height: 1.45;
   color: $type;
   width: 100%;
@@ -80,6 +83,22 @@ small, .font_small {font-size: 0.707em;}
   left: $scale * 2;
   margin: $scale;
   z-index: 100;
+}
+
+.btn-cta {
+  position: fixed;
+  background: $rose;
+  border-radius: 0;
+  right: 48px;
+  top: 48px;
+  font-weight: normal;
+  padding: 16px 24px;
+  font-family: $font;
+  z-index: 500;
+  &:hover {
+    background: darken($rose, 10%);
+    color: white;
+  }
 }
 a,
 button,
@@ -160,6 +179,7 @@ footer {
 }
 
 header {
+  position: relative;
   background: $primary;
   color: white;
   padding: 20vh 10vh 10vh 10vh;
