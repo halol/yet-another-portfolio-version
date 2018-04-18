@@ -195,6 +195,32 @@ header {
     padding: 64px 27px;
   }
 }
+.floating-logo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 500;
+  color: white;
+  font-weight: 600;
+  padding: 24px 10vh;
+
+}
+.progress-bar {
+  position: fixed;
+  // top: calc(100vh-90vh);
+  bottom: 0;
+  left: 0;
+  background: rgba($primary, 0.1);
+  width: 100%;
+  z-index: 490;
+  height: 8px;
+  //outline: 1px solid red;
+  .progress {
+    background: $primary;
+    height: 8px;
+    width: 0%;
+  }
+}
 .svg-button {
   padding: 0;
   margin: 0;
@@ -315,7 +341,7 @@ header {
 .cards {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  // justify-content: space-between;
   margin-left: $scale * 2 * -1;
   margin-right: $scale * 2 * -1;
   &.three-cards {
@@ -337,15 +363,15 @@ header {
   .card {
     position: relative;
     margin: $scale * 2;
-    $padding: $scale * 4;
-    padding: $padding;
-    background: lighten($type, 6%);
+    //$padding: $scale * 4;
+    //padding: $padding;
+    //background: lighten($type, 6%);
     border-radius: $border-radius;
     transition: all 0.3s ease;
-    &:hover {
-      background: $primary;
-      transform: scale(1.01);
-    }
+    // &:hover {
+    //   background: $primary;
+    //   transform: scale(1.01);
+    // }
     h3 {
       margin: 0;
       margin-bottom: $scale * 2;

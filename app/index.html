@@ -53,10 +53,18 @@
     <!--[if lt IE 10]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
+    <!-- <div class="floating-logo">
+
+    </div> -->
+    <div class="progress-bar">
+      <div class="progress"></div>
+    </div>
     <header>
+      <strong style="margin-left: 3px; margin-bottom: 64px;">Grzegorz Hadala</strong>
       <h1 class="lead slide-from-bottom">
-        <strong>Grzegorz Hadała</strong>
-        &mdash; design thinker, artistic soul and the problem solver with a pragmatic and holistic approach.
+        <!-- <strong>Grzegorz Hadała</strong>
+        &mdash;  -->
+        Design thinker, artistic soul and the problem solver with a pragmatic and holistic approach.
       </h1>
       <!-- <button class="btn-cta anal" title="Get in touch Button" id="cta">Get in touch</button> -->
       <button class="svg-button">
@@ -84,7 +92,7 @@
           </ul>
         </div>
         <div class="mockup slide-from-right">
-          <a href="https://www.behance.net/gallery/56175051/Disc-Museum">
+          <a href="/" class="disabled">
             <img src="images/android-print.png" srcset="images/android-print.png 1000w, images/android-print@2x.png 1280w, images/android-print_half.png 500w" alt="Disc Museum">
           </a>
         </div>
@@ -98,7 +106,7 @@
           <p class="project-description">Wall Décor Experience. <em>Work in progress</em></p>
         </div>
         <div class="mockup slide-from-right">
-          <a href="" class="disabled">
+          <a href="" class="disabled" disabled>
             <img src="images/walldeco.png" srcset="images/walldeco.png 1000w, images/walldeco@2x.png 1280w, images/walldeco_half.png 500w" alt="Latetrip.com">
           </a>
         </div>
@@ -256,7 +264,7 @@
           </ul>
         </div>
       </article>
-      <article class="cards two-cards">
+      <article class="cards three-cards">
         <div class="card">
           <h3>Design</h3>
           <ul>
@@ -279,7 +287,7 @@
       <p class="about-me slide-from-bottom"><strong>Product Designer</strong> with 3 years of practice with building beautiful mobile and web products with great experiences and 7 years as a multidisciplinary digital designer in print, marketing and advertising.</p>
       <p class="about-me slide-from-bottom">Worked with different types of target markets and delivered more than 30 mobile apps and websites in the corporate, start-up and a freelance environment.</p>
       <div class="brands ">
-        <p class="slide-from-bottom"><strong>I was working with big brands</strong></p>
+        <p class="slide-from-bottom"><strong>I worked with big brands:</strong></p>
         <ul class="list-inline slide-from-bottom">
           <li>Cisco</li>
           <li>Asus</li>
@@ -288,7 +296,7 @@
           <li>Allegro</li>
           <li>PayU</li>
         </ul>
-        <p class="slide-from-bottom"><strong>and some startups</strong></p>
+        <p class="slide-from-bottom"><strong>and some startups:</strong></p>
         <ul class="list-inline slide-from-bottom">
           <li><a href="https://kidsknowbest.co.uk/">Kids Know Best</a></li>
           <li><a href="http://latetrip.com/">Latetrip.com</a></li>
@@ -350,10 +358,24 @@
     <script src="scripts/main.js"></script>
     <!-- endbuild -->
     <script>
+    $(window).load(function() {
+      $(window).scroll(function(){
+        var windowTop = $(window).scrollTop();
+        var documentHeight = $(document).height();
+        var windowHeight = $(window).height();
+        var totalScroll = (windowTop / ( documentHeight - windowHeight )*100);
+        $('.progress').css({
+          "width": totalScroll+"%"
+        })
+      });
+    });
       $('.svg-button').click(function(e) {
         $('html, body').animate({
           scrollTop: $(".project").offset().top
-        }, 2000);
+        }, 1200);
+      });
+      $('.disabled').click(function(e) {
+        e.preventDefault();
       });
     </script>
     <script>
