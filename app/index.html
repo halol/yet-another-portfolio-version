@@ -59,6 +59,19 @@
         &mdash; design thinker, artistic soul and the problem solver with a pragmatic and holistic approach.
       </h1>
       <!-- <button class="btn-cta anal" title="Get in touch Button" id="cta">Get in touch</button> -->
+      <button class="svg-button">
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="scroll_down" stroke="#FFFFFF">
+            <path d="M20.131743,3.868273 C24.622773,8.359303 24.622773,15.640673 20.131743,20.131773 C15.640713,24.622803 8.359343,24.622803 3.868243,20.131773 C-0.622787,15.640743 -0.622787,8.359373 3.868243,3.868273 C8.359273,-0.622757 15.640643,-0.622757 20.131743,3.868273" id="Shape"></path>
+            <path d="M12,5.5 L12,18.5" id="Shape"></path>
+            <polyline id="Shape" points="16.5 14 12 18.5 7.5 14"></polyline>
+        </g>
+    </g>
+</svg></button>
     </header>
     <section class="project project-right">
       <div class="flex">
@@ -336,7 +349,13 @@
     <!-- build:js scripts/main.js -->
     <script src="scripts/main.js"></script>
     <!-- endbuild -->
-
+    <script>
+      $('.svg-button').click(function(e) {
+        $('html, body').animate({
+          scrollTop: $(".project").offset().top
+        }, 2000);
+      });
+    </script>
     <script>
         window.sr = ScrollReveal({
           distance: '100px',
